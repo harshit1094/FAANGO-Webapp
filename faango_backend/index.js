@@ -42,7 +42,7 @@ app.get('/api/secret', (req, res) => {
 // 2: connection options
 mongoose.connect(
     // Add your MONGO_PASSWORD in a .env file using npm dotenv
-    "mongodb+srv://harshit7090:" + process.env.MONGO_PASSWORD +"@cluster0.8nsfobq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "mongodb+srv://harshit7090:" + process.env.mONGO_PASSWORD +"@cluster0.8nsfobq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
     {
         useNewUrlParser : true,
         useUnifiedTopology : true
