@@ -20,8 +20,8 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/api/secret', (req, res) => {
-    const cloudinaryCloudname = process.env.cloudinary_cloudName;
-    const cloudinaryUploadPreset = process.env.cloudinary_upload_preset;
+    const cloudinaryCloudname = process.env.CLOUDINARY_CLOUDNAME;
+    const cloudinaryUploadPreset = process.env.CLOUDINARY_UPLOAD_PRESET;
     // Make sure the values are truthy before sending
     if (cloudinaryCloudname && cloudinaryUploadPreset) {
       // Convert to JSON and send
@@ -58,7 +58,7 @@ mongoose.connect(
 // Setup passport-jwt
 const opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = process.env.secretOrKey;
+opts.SECRETORKEY = process.env.SECRETORKEY;
 
 passport.use(new JwtStrategy(opts, async (jwt_payload, done) => {
     try {
